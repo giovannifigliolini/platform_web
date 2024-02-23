@@ -1,0 +1,161 @@
+<div class="section">
+  <div class="container">
+    <div class="row full-height justify-content-center">
+      <div class="col-12 text-center align-self-center py-5">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+          <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+          <input class="checkbox" type="checkbox" id="reg-log" (change)="formLogin.reset(); formSignup.reset()" name="reg-log" />
+          <label for="reg-log"></label>
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <form [formGroup]="formLogin" (ngSubmit)="login()">
+                      <h4 class="mb-4 pb-3 text-white">Log In</h4>
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          name="email"
+                          class="form-style"
+                          placeholder="Your Email"
+                          id="email"
+                          autocomplete="off"
+                          aria-label="email"
+                          formControlName="email"
+                        />
+                        <i class="input-icon uil uil-at"></i>
+                        <div
+                          class="d-flex"
+                          *ngIf="
+                            formLogin.controls['email']?.errors &&
+                            formLogin.controls['email'].touched
+                          "
+                        >
+                          <span class="text-danger fw-bold small"
+                            >Email non valida</span
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="password"
+                          name="logpass"
+                          class="form-style"
+                          placeholder="Your Password"
+                          id="logpass"
+                          autocomplete="off"
+                          aria-label="password"
+                          formControlName="password"
+                        />
+                        <i class="input-icon uil uil-lock-alt"></i>
+                        <div
+                          class="d-flex"
+                          *ngIf="
+                            formLogin.controls['password']?.errors &&
+                            formLogin.controls['password'].touched
+                          "
+                        >
+                          <span class="text-danger fw-bold small"
+                            >Lunghezza minima 8 caratteri</span
+                          >
+                        </div>
+                      </div>
+                      <button class="btn mt-4" type="submit">submit</button>
+                      <p class="mb-0 mt-4 text-center">
+                        <a href="#0" class="link">Forgot your password?</a>
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <form [formGroup]="formSignup" (ngSubmit)="signup()">
+                      <h4 class="mb-4 pb-3 text-white">Sign Up</h4>
+
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="fullName"
+                          class="form-style"
+                          placeholder="Inserisci nome e cognome"
+                          id="fullName"
+                          autocomplete="off"
+                          aria-label="fullName"
+                          formControlName="fullName"
+                        />
+                        <i class="input-icon uil uil-user"></i>
+                        <div
+                          class="d-flex"
+                          *ngIf="
+                            formSignup.controls['fullName']?.errors &&
+                            formSignup.controls['fullName'].touched
+                          "
+                        >
+                          <span class="text-danger fw-bold small"
+                            >Inserire almeno 3 caratteri</span
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="email"
+                          name="emailSignup"
+                          class="form-style"
+                          placeholder="Inserisci email"
+                          id="emailSignup"
+                          autocomplete="off"
+                          aria-label="email"
+                          formControlName="emailSignup"
+                        />
+                        <i class="input-icon uil uil-at"></i>
+                        <div
+                          class="d-flex"
+                          *ngIf="
+                            formSignup.controls['emailSignup']?.errors &&
+                            formSignup.controls['emailSignup'].touched
+                          "
+                        >
+                          <span class="text-danger fw-bold small"
+                            >Email non valida</span
+                          >
+                        </div>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="password"
+                          name="passwordSignup"
+                          class="form-style"
+                          placeholder="Inserisci password"
+                          id="passwordSignup"
+                          autocomplete="off"
+                          aria-label="password"
+                          formControlName="passwordSignup"
+                        />
+                        <i class="input-icon uil uil-lock-alt"></i>
+                        <div
+                          class="d-flex"
+                          *ngIf="
+                            formSignup.controls['passwordSignup']?.errors &&
+                            formSignup.controls['passwordSignup'].touched
+                          "
+                        >
+                          <span class="text-danger fw-bold small"
+                            >Lunghezza minima 8 caratteri</span
+                          >
+                        </div>
+                      </div>
+                      <button class="btn mt-4" type="submit">submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
