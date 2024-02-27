@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-12">
+      <h1>Compila il curriculum</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <mat-tab-group [selectedIndex]="selectedTab">
+        <mat-tab label="Informazioni">
+          <app-info (info)="salvaCurriculum($event, selectedTab)"></app-info
+        ></mat-tab>
+        <mat-tab label="Competenze">
+          <app-skills
+            (compentenze)="salvaCurriculum($event, selectedTab)"
+          ></app-skills>
+        </mat-tab>
+        <mat-tab label="Formazione">
+          <app-education
+            (formazione)="salvaCurriculum($event, selectedTab)"
+          ></app-education>
+        </mat-tab>
+        <mat-tab label="Esperienze">
+          <app-experience
+            (esperienza)="salvaCurriculum($event, selectedTab)"
+          ></app-experience>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,150 @@
+<div class="container py-3">
+   <form [formGroup]="formInfo" (ngSubmit)="salvaInfo()">
+    <div class="row mt-5 mb-5">
+        <div class="form-group col-6">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            aria-describedby="nomeError"
+            placeholder="Inserisci nome"
+            formControlName="nome"
+          />
+          <small *ngIf="false">
+            id="nomeError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-6">
+          <label for="cognome">Cognome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cognome"
+            aria-describedby="cognomeError"
+            placeholder="Inserisci cognome"
+            formControlName="cognome"
+          />
+          <small *ngIf="false">
+            id="cognomeError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+      </div>
+    
+      <div class="row mb-5">
+        <div class="form-group col-3">
+          <label for="dataNascita">Data di nascita</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dataNascita"
+            aria-describedby="dataError"
+            placeholder="Inserisci data di nascita"
+          />
+          <small *ngIf="false">
+            id="nomeError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-3">
+          <label for="telefono">Telefono</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+            aria-describedby="telefonoError"
+            placeholder="Inserisci numero di telefono"
+          />
+          <small *ngIf="false">
+            id="nomeError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-6">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            aria-describedby="emailError"
+            placeholder="Inserisci email"
+          />
+          <small *ngIf="false">
+            id="cognomeError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+      </div>
+    
+      <div class="row mb-5">
+        <div class="form-group col-4">
+          <label for="viaIndirizzo">Via</label>
+          <input
+            type="text"
+            class="form-control"
+            id="viaIndirizzo"
+            aria-describedby="viaError"
+            placeholder="Inserisci via"
+            formControlName="viaIndirizzo"
+          />
+          <small *ngIf="false">
+            id="viaError" class="form-text text-muted" >We'll never share your email
+            with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-4">
+          <label for="città">Città</label>
+          <input
+            type="text"
+            class="form-control"
+            id="città"
+            aria-describedby="cittàError"
+            placeholder="Inserisci città"
+            formControlName="città"
+          />
+          <small *ngIf="false">
+            id="cittàError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-2">
+          <label for="provincia">Provincia</label>
+          <input
+            type="text"
+            class="form-control"
+            id="provincia"
+            aria-describedby="provinciaError"
+            placeholder="Inserisci provincia"
+            formControlName="provincia"
+          />
+          <small *ngIf="false">
+            id="provinciaError" class="form-text text-muted" >We'll never share your
+            email with anyone else.</small
+          >
+        </div>
+        <div class="form-group col-2">
+          <label for="cap">CAP</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cap"
+            aria-describedby="capError"
+            placeholder="Inserisci cap"
+            formControlName="cap"
+          />
+          <small *ngIf="false">
+            id="capError" class="form-text text-muted" >We'll never share your email
+            with anyone else.</small
+          >
+        </div>
+      </div>
+    
+      <div class="row d-flex justify-content-end">
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary w-100">Salva</button>
+        </div>
+      </div>
+   </form>
+  </div>

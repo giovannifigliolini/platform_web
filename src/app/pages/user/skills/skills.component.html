@@ -1,0 +1,80 @@
+<div class="container py-3">
+    <form [formGroup]="formCompetenze" (ngSubmit)="salvaInfo()">
+     <div class="row mt-5 mb-5">
+         <div class="form-group col-6">
+           <label for="ruolo">Ruolo</label>
+           <input
+             type="text"
+             class="form-control"
+             id="ruolo"
+             aria-describedby="ruoloError"
+             placeholder="Inserisci ruolo"
+             formControlName="ruolo"
+           />
+           <small *ngIf="false">
+             id="nomeError" class="form-text text-muted" >We'll never share your
+             email with anyone else.</small
+           >
+         </div>
+         <div class="form-group col-6">
+            <label for="descrizione">Descrizione</label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="descrizione"
+              aria-describedby="descrizioneError"
+              placeholder="Inserisci descrizione"
+            ></textarea>
+            <small *ngIf="false">
+              id="cognomeError" class="form-text text-muted" >We'll never share your
+              email with anyone else.</small
+            >
+          </div>
+         
+       </div>
+     
+       <div class="row mb-2">
+        <div class="form-group col-6">
+            <label for="skills">Skills</label>
+            <input
+            (keyup.enter)="addSkill($event)"
+              type="text"
+              class="form-control"
+              id="skills"
+              aria-describedby="skillsError"
+              placeholder="Inserisci skills"
+              formControlName="skills"
+            />
+            <small *ngIf="false">
+              id="cognomeError" class="form-text text-muted" >We'll never share your
+              email with anyone else.</small
+            >
+          </div>
+       </div>
+
+       <div class="row">
+        <div class="col-6">
+            <mat-chip-row
+            *ngFor="let skill of skills; let i = index"
+        (removed)="remove(i)"
+        [editable]="true"
+        (edited)="edit($event, i)"
+        [aria-description]="'press enter to edit ' + skill">
+        {{skill}}
+        <button matChipRemove [attr.aria-label]="'remove ' + skill">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+        </div>
+
+       </div>
+     
+       
+       <div class="row d-flex justify-content-end">
+         <div class="col-3">
+             <button type="submit" class="btn btn-primary w-100">Salva</button>
+         </div>
+       </div>
+    </form>
+   </div>
+ 
