@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/css/style.css';
 
+:root{
+    --bg-primary : rgb(42, 43, 56);
+}
+
+html, body {
+    height: 100vh;
+  }
+
 input{
     border: none !important;
     border-radius: 0px !important;

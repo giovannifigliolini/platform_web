@@ -1,0 +1,31 @@
+mat-sidenav{
+    width: 15%;
+    background-color: gainsboro;
+}
+
+ul{
+    list-style: none !important;
+
+    li a {
+        height: 3rem;
+        
+    }
+}
+
+.btn-primary{
+    background-color: gainsboro;
+    color:var(--bg-primary) !important;
+    border: none !important;
+    &:hover{
+        background-color: var(--bg-primary) !important;
+        color: white !important;
+}
+    
+}
+
+.active{
+
+    background-color: var(--bg-primary) !important;
+        color: white !important;
+
+}

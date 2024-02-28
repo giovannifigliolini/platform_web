@@ -1,0 +1,45 @@
+<mat-sidenav-container class="h-100">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <ul class="p-0 px-2 pt-5">
+      <li>
+        <a
+          class="btn btn-primary w-100 d-flex justify-content-start align-items-center mb-2"
+          routerLink="info"
+          routerLinkActive="active"
+          ><mat-icon class="me-5">person_outline</mat-icon> Anagrafica</a
+        >
+      </li>
+      <li>
+        <a
+          class="btn btn-primary w-100 d-flex justify-content-start align-items-center mb-2"
+          routerLink="skills"
+          routerLinkActive="active"
+        >
+          <mat-icon class="me-5">wb_incandescent</mat-icon>Skills</a
+        >
+      </li>
+      <li>
+        <a
+          class="btn btn-primary w-100 d-flex justify-content-start align-items-center mb-2"
+          routerLink="formazione"
+          routerLinkActive="active"
+        >
+          <mat-icon class="me-5">school</mat-icon>Formazione</a
+        >
+      </li>
+      <li>
+        <a
+          class="btn btn-primary w-100 d-flex justify-content-start align-items-center mb-2"
+          routerLink="esperienze"
+          routerLinkActive="active"
+        >
+          <mat-icon class="me-5">assignment</mat-icon> Esperienze</a
+        >
+      </li>
+    </ul>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="bg-white">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
