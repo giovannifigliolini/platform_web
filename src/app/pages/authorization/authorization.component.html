@@ -75,30 +75,7 @@
                     <form [formGroup]="formSignup" (ngSubmit)="signup()">
                       <h4 class="mb-4 pb-3 text-white">Sign Up</h4>
 
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          name="fullName"
-                          class="form-style"
-                          placeholder="Inserisci nome e cognome"
-                          id="fullName"
-                          autocomplete="off"
-                          aria-label="fullName"
-                          formControlName="fullName"
-                        />
-                        <i class="input-icon uil uil-user"></i>
-                        <div
-                          class="d-flex"
-                          *ngIf="
-                            formSignup.controls['fullName']?.errors &&
-                            formSignup.controls['fullName'].touched
-                          "
-                        >
-                          <span class="text-danger fw-bold small"
-                            >Inserire almeno 3 caratteri</span
-                          >
-                        </div>
-                      </div>
+                      
                       <div class="form-group mt-2">
                         <input
                           type="email"

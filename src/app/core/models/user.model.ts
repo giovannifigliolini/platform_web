@@ -29,3 +29,15 @@ export interface Esperienza{
     azienda ?: string,
     descrizione ?: string,
 }
+
+export interface User{
+    email : string,
+    password ?: string,
+
+}
+
+export interface Token{
+    token : string,
+    expiresIn :string
+
+}

@@ -1,40 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../core/services/auth.service';
+import { Token, User } from '../../core/models/user.model';
 
 @Component({
   selector: 'app-authorization',
   standalone: true,
-  imports: [CommonModule , ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './authorization.component.html',
   styleUrl: './authorization.component.scss'
 })
 export class AuthorizationComponent {
 
+  // private authService = Inject(AuthService);
+
   formLogin !: FormGroup;
   formSignup !: FormGroup;
 
-  constructor(){
+  constructor(private authService: AuthService) {
     this.formLogin = new FormGroup({
-      email : new FormControl('', [Validators.required, Validators.email]),
-      password : new FormControl('', [Validators.required, Validators.minLength(8)])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
-    
+
     this.formSignup = new FormGroup({
-      fullName : new FormControl('', [Validators.required, Validators.minLength(3)]),
-      emailSignup : new FormControl('', [Validators.required, Validators.email]),
-      passwordSignup : new FormControl('', [Validators.required, Validators.minLength(8)])
+      emailSignup: new FormControl('', [Validators.required, Validators.email]),
+      passwordSignup: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
   }
 
-  login(){
+  login() {
 
-    console.log(this.formLogin)
+    this.authService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe((elem) => console.log(elem))
 
   }
 
-  signup(){
-    console.log(this.formSignup.value)
+  signup() {
+
+    this.authService.signup(this.formSignup.value.emailSignup, this.formSignup.value.passwordSignup).subscribe((elem) => console.log(elem));
+
   }
 
 }
